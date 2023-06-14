@@ -1,0 +1,110 @@
+<body>
+  
+  <div id="particles-js"></div>
+
+
+
+<section class="home-wrapper">
+    <nav class="nav">
+        <div class="nav__container">
+            <h1 class="nav__logo">Geofimaticos</h1>
+            <label for="menu" class="nav__label">
+                <img src="../../../assets/img/menu.svg" alt="">
+            </label>
+            <input type="checkbox" id="menu" class="nav__input">
+
+            <div class="nav__menu">
+                <a routerLink="/inicio" class="nav__item">Home</a>
+                <a routerLink="/login" class="nav__item">Login</a>
+                <a routerLink="/signIn" class="nav__item">Sigin</a>
+            </div>
+
+        </div>
+    </nav>
+    
+<section class="container">
+
+
+    <h1 class="text-center text-light mt-3"> <i class="fa fa-calculator" aria-hidden="true"></i> Calculadora</h1>
+    <div class="row full">
+  
+      <!-- Calculadora -->
+      <div class="col-sm-6 mt-2 mb-2 calculadora" [style]="estiloPos1">
+  
+        <div>
+  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+  
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="screen" aria-label="Text input">
+          </div>
+  
+        </div>
+        <div class="container text-center">
+          <b>
+            <h1>
+              <input type="button" (click)="enterValue('1')" value="1">
+              <input type="button" (click)="enterValue('2')" value="2">
+              <input type="button" (click)="enterValue('3')" value="3">
+              <input type="button" (click)="condition('+')" value="+">
+            </h1>
+  
+            <h1>
+              <input type="button" (click)="enterValue('4')" value="4">
+              <input type="button" (click)="enterValue('5')" value="5">
+              <input type="button" (click)="enterValue('6')" value="6">
+              <input type="button" (click)="condition('-')" value="-">
+            </h1>
+            <h1>
+              <input type="button" (click)="enterValue('7')" value="7">
+              <input type="button" (click)="enterValue('8')" value="8">
+              <input type="button" (click)="enterValue('9')" value="9">
+              <input type="button" (click)="condition('*')" value="*">
+            </h1>
+  
+            <h1>
+              <input type="button" (click)="enterValue('0')" value="0">
+              <input type="button" (click)="condition('/')" value="/">
+              <input type="button" (click)="result()" value="=">
+              <input type="button" (click)="clear()" value="C">
+            </h1>
+          </b>
+        </div>
+  
+      </div>
+  
+      <!-- History -->
+      <div class="col-sm-6 history"[style]="estiloPos2">
+  
+        <div class="card text-light" id="scroll">
+          <div class="card-title {{btnActive}} mr-2"><i class="fa fa-history" aria-hidden="true"></i> Historial</div>
+          <div class="card-body {{btnActive}} scroll" data-spy="scroll" data-target="#scroll" #mostrarOperaciones>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="row text-center mt-2">
+      <div class="col-12">
+        <!-- <button class="btn btn-outline-secondary btn-lg mr-2 mb-2" (click)="cambiarPosicion()" style="text-align:center"><i class="fa fa-arrows-h" aria-hidden="true"></i> Position History</button> -->
+        <button class="btn btn-outline-danger btn-lg mb-2 mr-2" style="text-align:center"(click)="limpiar()"><i class="fa fa-trash-o" aria-hidden="true"></i> Limpiar History</button>
+        <button class="btn btn-outline-warning btn-lg  mb-2 btnPosDivs "(click)="cambiarPosicionDiv()" style="text-align:center"><i
+              class="fa fa-arrows-h" aria-hidden="true"></i> Cambiar Posicion</button> 			    
+  </div>
+    </div>
+  
+  </section>
+
+    
+</section>
+
+
+<!-- particulas de js fondo -->
+
+<script src="/src/assets/fondo/particles.min.js"></script>
+<script src="/src/assets/fondo/app.js"></script>
+
+
+</body>

@@ -1,0 +1,101 @@
+<body>
+  
+  
+    <nav class="nav">
+      <div class="nav__container">
+          <h1 class="nav__logo">Geofimaticos</h1>
+          <label for="menu" class="nav__label">
+              <img src="../../../assets/img/menu.svg" alt="">
+          </label>
+          <input type="checkbox" id="menu" class="nav__input">
+  
+          <div class="nav__menu">
+              <a routerLink="/inicio" class="nav__item">Home</a>
+          </div>
+  
+      </div>
+  </nav>
+  
+  
+  <div class="contenedor">  
+  
+  
+  <section class="teoria">
+    
+    <h1>MRU</h1>
+    <p>El MRU se define el movimiento en el cual un objeto se desplaza en línea recta, en una sola dirección, recorriendo distancias iguales en el mismo intervalo de tiempo, manteniendo en todo su movimiento una velocidad constante y sin aceleración.</p>
+    <p> &#x2022; v,v₀: La velocidad del cuerpo en un instante dado (v) y en el instante inicial (v₀). Su unidad en el Sistema Internacional es el metro por segundo (m/s)</p>
+    <p> &#x2022; a: La aceleración del cuerpo. Permanece constante y con un valor distinto de 0. Su unidad en el Sistema Internacional es el metro por segundo al cuadrado (m/s2)</p>
+    <p> &#x2022; t: El intervalo de tiempo estudiado.  Su unidad en el Sistema Internacional es el segundo (s)</p>
+    <p> &#x2022; x, x0: La posición del cuerpo en un instante dado (x) y en el instante inicial (x0). Su unidad en el Sistema Internacional (S.I.) es el metro (m)</p>
+    
+  </section>
+  
+  <div class="contenedor">
+    <!-- FORMULA DE VELOCIDAD PROMEDIO MRU INICIO -->
+   <div class="vpromedio">
+     <p>VELOCIDAD PROMEDIO</p> <p>v = Δx / Δt</p>
+    <mat-form-field>
+      <p>Δx</p>
+      <input matInput [(ngModel)]="valor1vp" type="number" placeholder="Ingrese Δx">
+    </mat-form-field>
+        <p>/</p>
+    <mat-form-field>
+      <p>Δt</p>
+        <input matInput [(ngModel)]="valor2vp" type="number" placeholder="Ingrese Δt">
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)="veloPromed()">Resolver</button>
+    <p>El resultado de la formula de la velocidad promedio es: {{resultadovp}} m/s</p>
+    </div>
+    <!-- FORMULA DE VELOCIDAD PROMEDIO MRU FIN -->
+      <dir></dir>
+    <!-- FORMULA DE POSICION FINAL MRU INICIO -->
+   <div class="pfinal">
+    <p>POSICION FINAL</p> <p>x = x₀ + v * t</p>
+   <mat-form-field>
+     <p>x₀</p>
+     <input matInput [(ngModel)]="valor1pf" type="number" placeholder="Ingrese x₀">
+   </mat-form-field>
+      <p>+</p>
+   <mat-form-field>
+     <p>v</p>
+       <input matInput [(ngModel)]="valor2pf" type="number" placeholder="Ingrese v">
+   </mat-form-field>
+      <p>*</p>
+   <mat-form-field>
+    <p>t</p>
+      <input matInput [(ngModel)]="valor3pf" type="number" placeholder="Ingrese t">
+    </mat-form-field>
+   
+   <button mat-raised-button color="primary" (click)="posFinal()">Resolver</button>
+   <p>El resultado de la formula de la posicion final es: {{resultadopf}} m</p>
+   </div>
+   <!-- FORMULA DE POSICION FINAL MRU FIN -->
+   <dir></dir>
+   <!-- FORMULA DE TIEMPO DE VIAJE MRU INICIO -->
+   <div class="tviaje">
+    <p>TIEMPO DE VIAJE</p> <p>t = Δx / v</p>
+   <mat-form-field>
+     <p>Δx</p>
+     <input matInput [(ngModel)]="valor1tv" type="number" placeholder="Ingrese Δx">
+   </mat-form-field>
+     <p>/</p>
+   <mat-form-field>
+     <p>v</p>
+       <input matInput [(ngModel)]="valor2tv" type="number" placeholder="Ingrese v">
+   </mat-form-field>
+   
+   <button mat-raised-button color="primary" (click)="tiempoViaj()">Resolver</button>
+   <p>El resultado de la formula de el tiempo de viaje es: {{resultadotv}} s</p>
+   <!-- FORMULA DE TIEMPO DE VIAJE MRU FIN -->
+   </div>
+  
+      <p>Video de explicacion</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/wc3scVd1JYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   
+  </div>
+  
+  </div>
+  
+  </body>
